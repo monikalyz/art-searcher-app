@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Logo from "./Logo";
 import HeaderText from "./HeaderTxt";
+import Searcher from "./Searcher";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <AppHeader>
         <HeaderText />
       </AppHeader>
+      <Searcher />
     </AppWrapper>
   );
 }
