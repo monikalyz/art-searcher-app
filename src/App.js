@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import styled, { createGlobalStyle } from "styled-components";
+import Logo from "./Logo";
+import HeaderText from "./HeaderTxt";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <GlobalStyle />
+      <Logo alt="new" fill="none" stroke="white" />
+      <AppHeader>
+        <HeaderText />
+      </AppHeader>
+    </AppWrapper>
   );
 }
+
+const AppWrapper = styled.div`
+  text-align: center;
+  overflow-x: hidden;
+  height: 100vh;
+  color: white;
+`;
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  };
+
+  body {
+    background-color: #282c34;
+  }
+`;
+
+const AppHeader = styled.header`
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default App;
