@@ -1,21 +1,66 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
+import Images from "./Images";
 
 class Searcher extends Component {
-  state = {};
+  state = {
+    value: "",
+    images: null,
+  };
+
+  handleInputChange = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
+
+  handleData = (e) => {
+    e.preventDefault();
+    if (this.state.value !== "") {
+      const API = `https://api.artic.edu/api/v1/artworks/search?`;
+
+      const q = `q=${this.state.value}[term][is_public_domain]=true&limit=18&fields=id,title,image_id,thumbnail`;
+
+      fetch(API + q)
+        .then((response) => {
+          if (response.ok) {
+            return response;
+          }
+          throw Error("błąd");
+        })
+
+        .then((response) => response.json())
+
+        .then((data) => {
+          this.setState({
+            images: data.data,
+          });
+        })
+
+        .catch((error) => error + " oł nooooł błąąąąd");
+    }
+  };
+
   render() {
+    const images = this.state.images;
     return (
       <AppSearcher>
         <Search>
-          <Input type="text" required />
+          <Input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleInputChange}
+            required
+          />
           <Placeholder className="placeholder">
             Write name of art, artist etc.
           </Placeholder>
           <CoverBtn />
           <br />
-          <Button>search</Button>
+          <Button onClick={this.handleData}>search</Button>
           <SdCoverBtn />
         </Search>
+        {images ? <Images images={images} /> : images}
       </AppSearcher>
     );
   }
