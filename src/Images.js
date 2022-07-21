@@ -27,11 +27,22 @@ const ListElement = styled.li`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (orientation: landscape) {
+    max-width: 80vh;
+    margin: auto;
+    margin-bottom: 70px;
+  }
 `;
 
 const TextImage = styled.h4`
   margin-top: 20px;
   width: 80%;
+
+  @media (orientation: landscape) {
+    display: block;
+    font-size: 24px;
+  }
 `;
 
 const scroll = keyframes`
@@ -40,12 +51,23 @@ const scroll = keyframes`
     }
 `;
 
+const scrolling = keyframes`
+    to {
+            top: 100vh;
+        }
+`;
+
 const List = styled.ul`
   width: 100%;
   top: 100vh;
   position: absolute;
   animation: ${scroll} 2s ease forwards;
   background-color: #282c34;
+
+  @media (orientation: landscape) {
+    top: 100vh;
+    animation: ${scrolling} 2s ease forwards;
+  }
 `;
 
 export default Images;
