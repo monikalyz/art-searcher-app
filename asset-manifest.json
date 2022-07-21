@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/art-searcher-app/static/css/main.e6c13ad2.css",
+    "main.js": "/art-searcher-app/static/js/main.6d694b5a.js",
+    "static/js/787.d9709b71.chunk.js": "/art-searcher-app/static/js/787.d9709b71.chunk.js",
+    "index.html": "/art-searcher-app/index.html",
+    "main.e6c13ad2.css.map": "/art-searcher-app/static/css/main.e6c13ad2.css.map",
+    "main.6d694b5a.js.map": "/art-searcher-app/static/js/main.6d694b5a.js.map",
+    "787.d9709b71.chunk.js.map": "/art-searcher-app/static/js/787.d9709b71.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.6d694b5a.js"
+  ]
+}
